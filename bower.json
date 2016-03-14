@@ -1,0 +1,21 @@
+{
+  "name": "backbone-forkable-model",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/rally25rs/backbone-forkable-model",
+  "ignore": {},
+  "authors": [
+    "Jeff Valore <rally25rs@yahoo.com>"
+  ],
+  "description": "Extend Backbone.js models to be forked and merged.",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "backbone"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "backbone": "*"
+  }
+}
