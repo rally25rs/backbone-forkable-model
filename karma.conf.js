@@ -17,6 +17,7 @@ module.exports = function(config) {
     files: [
       'node_modules/underscore/underscore.js',
       'node_modules/backbone/backbone.js',
+      'node_modules/backbone-deep-model/distribution/deep-model.js',
       'index.js',
       'test/**/*.spec.js'
     ],

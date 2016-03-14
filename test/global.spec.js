@@ -1,7 +1,7 @@
 'use strict';
 
-describe('Backbone.ForkableModelMixin', function() {
-  it('is registered globaly', function() {
-    expect(Backbone.ForkableModelMixin).to.exist;
+describe('ForkableModel', function() {
+  it('attaches itself to the Backbone object', function() {
+    expect(Backbone.ForkableModel).to.exist;
   });
 });

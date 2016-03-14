@@ -1,4 +1,4 @@
-Backbone.ForkableModelMixin = (function(_) {
+Backbone.ForkableModel = (function(_) {
   'use strict';
 
   function fork() {
@@ -6,6 +6,8 @@ Backbone.ForkableModelMixin = (function(_) {
   }
 
   return {
-    fork: fork
+    mixin: {
+      fork: fork
+    }
   };
 })(window._);
