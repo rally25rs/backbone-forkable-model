@@ -8,7 +8,17 @@ Backbone.ForkableModel = (function(_) {
   }
 
   function unfork() {
-    this._forkedFrom.set(this.attributes);
+    var forkedFrom = this._forkedFrom;
+    var removedKeys = _.difference(forkedFrom.keys(), this.keys());
+    var unsetProps = {};
+
+    _.each(removedKeys, function(key) {
+      unsetProps[key] = undefined;
+    });
+
+    forkedFrom.set(this.attributes);
+    forkedFrom.unset(unsetProps);
+
     return this._forkedFrom;
   }
 

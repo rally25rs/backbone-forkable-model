@@ -54,6 +54,18 @@ describe('unfork()', function() {
     expect(original.get('two')).to.equal(2);
   });
 
+  it('removes values that were unset on model it was forked from', function() {
+    var original = fixture.modelWithOneProperty;
+    original.set('two', 2);
+    var forked = original.fork();
+
+    forked.unset('one');
+    forked.unfork();
+
+    expect(original.has('one')).to.be.false;
+    expect(original.has('two')).to.be.true;
+  });
+
   it('triggers change events on model it was forked from', function(done) {
     var original = fixture.modelWithOneProperty;
     var forked = original.fork();
@@ -66,7 +78,7 @@ describe('unfork()', function() {
   });
 
   describe('with DeepModel', function() {
-    it('sets changed values on nested obejcts', function() {
+    it('sets changed values on nested objects', function() {
       var original = fixture.modelWithOneProperty;
       var forked = original.fork();
 
@@ -74,6 +86,16 @@ describe('unfork()', function() {
       forked.unfork();
 
       expect(original.get('sub.prop')).to.equal('changed');
+    });
+
+    it('removes values that were unset on nested obejcts', function() {
+      var original = fixture.modelWithOneProperty;
+      var forked = original.fork();
+
+      forked.unset('sub.prop');
+      forked.unfork();
+
+      expect(original.has('sub.prop')).to.be.false;
     });
 
     it('preserves instance of sub objects', function() {
