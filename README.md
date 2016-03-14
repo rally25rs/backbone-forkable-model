@@ -59,6 +59,10 @@ This is done using `Model.set()` and `Model.unset()` functions internally, so al
 
 Returns the instance of the model that was orignally forked from.
 
+### .forkHasChanges()
+
+Returns boolean, true if the forked copy of the model has any changes from the original. Otherwise returns false.
+
 ## Sample Code
 
 ```
